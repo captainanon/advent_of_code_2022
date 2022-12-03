@@ -37,9 +37,27 @@ def solve_puzzle(file):
         sum += scores[item]
     return sum
 
+
+def alt_solve_puzzle(file):
+    sacks = process_puzzle_inputs(file)
+    alpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    scores = dict(zip(alpha, list(range(1, 53)))) 
+    score = 0
+    for sack in sacks:
+        num_ = len(sack) // 2
+        comp_1 = set(sack[:num_])
+        comp_2 = set(sack[num_:])
+        item = list((comp_1 & comp_2))[0] # intersection of sets
+        score += scores[item]
+    return score
+
     
 if __name__ == '__main__':
     test_inputs = 'puzzle_test_inputs.txt'
     actual_inpus = 'puzzle_inputs.txt'
+
     print(solve_puzzle(test_inputs)) # 157
     print(solve_puzzle(actual_inpus)) # 7793
+
+    print(alt_solve_puzzle(test_inputs)) # 157
+    print(alt_solve_puzzle(actual_inpus)) # 7793
