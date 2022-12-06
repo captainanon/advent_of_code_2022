@@ -16,7 +16,7 @@ def solve_puzzle(file):
     
 if __name__ == '__main__':
     test_inputs = 'puzzle_test_inputs.txt'
-    print(solve_puzzle(test_inputs)) 
+    print(solve_puzzle(test_inputs)) # 
 
-    # actual_inputs = 'puzzle_inputs.txt' # 
+    # actual_inputs = 'puzzle_inputs.txt' 
     # print(solve_puzzle(actual_inputs)) # 
