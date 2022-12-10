@@ -32,7 +32,7 @@ def draw(cycle_list):
     hor_pos = 0
     picture = ''
     for sprite in cycle_list.values():
-        if (sprite - 1) == hor_pos or sprite == hor_pos or (sprite + 1) == hor_pos:
+        if (sprite - 1) == hor_pos or sprite == hor_pos or (sprite + 1) == hor_pos: #modulo was a mistake
             picture += '#'
         else:
             picture += '.'
